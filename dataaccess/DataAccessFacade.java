@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,9 +22,9 @@ public class DataAccessFacade implements DataAccess {
 	enum StorageType {
 		BOOKS, MEMBERS, USERS;
 	}
-	
-	public static final String OUTPUT_DIR = System.getProperty("user.dir") 
-			+ "\\src\\dataaccess\\storage";
+
+
+	public static final String OUTPUT_DIR = Paths.get("./").toAbsolutePath().toString() + "\\dataaccess\\storage";
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 	
 
@@ -73,9 +74,9 @@ public class DataAccessFacade implements DataAccess {
 	public  HashMap<String,Book> readBooksMap() {	
 		return (HashMap<String,Book>) readFromStorage(StorageType.BOOKS);
 	}
-	
-	
-	
+
+
+
 	//public HashMap<String, LibraryMember> readMemberMap() {
 	
 	

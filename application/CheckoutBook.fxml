@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="472.0" prefWidth="417.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane prefHeight="472.0" prefWidth="417.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="business.SystemController">
   <!-- TODO Add Nodes -->
   <children>
     <SplitPane dividerPositions="0.52" focusTraversable="true" orientation="VERTICAL" prefHeight="414.0" prefWidth="365.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
@@ -22,13 +22,13 @@
                   </GridPane.margin>
                 </Label>
                 <Label text="Member ID:" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1" />
-                <Button mnemonicParsing="false" text="Checkout" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Button id="checkoutbook" fx:id="checkout" mnemonicParsing="false" onAction="#handleCheckoutBook" text="Checkout" GridPane.columnIndex="1" GridPane.rowIndex="2">
                   <GridPane.margin>
                     <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
                   </GridPane.margin>
                 </Button>
-                <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
-                <TextField prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                <TextField fx:id="isbn" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                <TextField fx:id="memberid" prefWidth="200.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1" />
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,7 +40,7 @@
                 <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <Text layoutX="124.0" layoutY="52.0" scaleX="1.0" scaleY="1.6204986149584488" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Checkout">
+            <Text layoutX="129.0" layoutY="52.0" scaleX="1.0" scaleY="1.6204986149584488" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Checkout">
               <font>
                 <Font name="Arial Black" size="16.0" />
               </font>

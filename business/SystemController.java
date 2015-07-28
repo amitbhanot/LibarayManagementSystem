@@ -1,20 +1,37 @@
 package business;
 
+import java.net.URL;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+
+import javax.swing.JOptionPane;
+
 import dataaccess.Auth;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 import dataaccess.User;
 
-public class SystemController implements ControllerInterface {
+public class SystemController implements ControllerInterface{//, Initializable {
 	public static Auth currentAuth = null;
 	
 	@FXML private Button addmember;
 	@FXML private Button checkoutbook;
+	@FXML private TextField isbn;
+	@FXML private TextField memberid;
+	@FXML private Pane rightpane;
+	@FXML private Button checkout;
+	
 	
 	@Override
 	public void login(String id, String password) throws LoginException {
@@ -105,11 +122,53 @@ public class SystemController implements ControllerInterface {
 
 	@FXML protected void handleCheckoutBook(ActionEvent event)
 	{
-		
+		System.out.println("Checking Out Book.");
 	}
 	
-	@Override
-	public void initialize
+	@FXML protected void handleCheckoutBookClick(ActionEvent event)
+	{
+		System.out.println("Easy");
+		try
+		{
+			URL url = getClass().getResource("CheckoutBook.fxml");
+			FXMLLoader fxmlloader = new FXMLLoader();
+		    fxmlloader.setLocation(url);
+		    fxmlloader.setBuilderFactory(new JavaFXBuilderFactory());
+		    System.out.println(url);
+		    rightpane.getChildren().clear();
+	//	    rightpane.getChildren().add((Node)fxmlloader.load(url.openStream()));
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+	
+//	@SuppressWarnings("unchecked")
+//	@Override
+//	public void initialize(URL fxmlFileLocation, ResourceBundle resources)
+//	{
+//		checkoutbook.setOnAction(new EventHandler<ActionEvent>(){
+//			@Override public void handle(ActionEvent e)
+//			{
+//				JOptionPane.showMessageDialog(null,"Success");
+//				try
+//				{
+//					URL url = getClass().getResource("CheckoutBook.fxml");
+//					FXMLLoader fxmlloader = new FXMLLoader();
+//				    fxmlloader.setLocation(url);
+//				    fxmlloader.setBuilderFactory(new JavaFXBuilderFactory());
+//			
+//				    rightpane.getChildren().clear();
+//				    rightpane.getChildren().add((Node)fxmlloader.load(url.openStream()));
+//				}
+//				catch(Exception ex)
+//				{
+//					ex.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	
 }
