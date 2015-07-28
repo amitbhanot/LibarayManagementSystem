@@ -2,6 +2,9 @@ package business;
 
 import java.util.HashMap;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import dataaccess.Auth;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
@@ -9,6 +12,9 @@ import dataaccess.User;
 
 public class SystemController implements ControllerInterface {
 	public static Auth currentAuth = null;
+	
+	@FXML private Button addmember;
+	@FXML private Button checkoutbook;
 	
 	@Override
 	public void login(String id, String password) throws LoginException {
@@ -97,8 +103,13 @@ public class SystemController implements ControllerInterface {
 	}
 
 
+	@FXML protected void handleCheckoutBook(ActionEvent event)
+	{
+		
+	}
 	
-	
+	@Override
+	public void initialize
 
 	
 }

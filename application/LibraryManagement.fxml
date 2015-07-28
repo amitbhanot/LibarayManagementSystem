@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="459.0" prefWidth="543.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane prefHeight="459.0" prefWidth="543.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="business.SystemController">
   <!-- TODO Add Nodes -->
   <children>
     <SplitPane dividerPositions="0.37037037037037035" focusTraversable="true" layoutX="14.0" layoutY="14.0" prefHeight="431.0" prefWidth="515.0">
@@ -15,8 +15,8 @@
           <children>
             <GridPane layoutY="32.0" prefHeight="263.0" prefWidth="155.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0">
               <children>
-                <Button mnemonicParsing="false" text="Add Member" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <Button mnemonicParsing="false" text="Checkout Book" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Button fx:id="addmember" mnemonicParsing="false" text="Add Member" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button fx:id="checkoutbook" mnemonicParsing="false" onAction="#handleCheckoutBook" text="Checkout Book" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <Button mnemonicParsing="false" text="Add Book Copy" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                 <Button mnemonicParsing="false" text="Add Book" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                 <Button mnemonicParsing="false" text="Search Member" GridPane.columnIndex="0" GridPane.rowIndex="4" />
@@ -47,4 +47,7 @@
       </items>
     </SplitPane>
   </children>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+  </padding>
 </AnchorPane>
