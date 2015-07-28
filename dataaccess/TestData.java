@@ -54,6 +54,7 @@ public class TestData {
 			add(new User("101", "xyz", Auth.LIBRARIAN));
 			add(new User("102", "abc", Auth.ADMIN));
 			add(new User("103", "111", Auth.BOTH));
+			add(new User("100","admin",Auth.BOTH));
 		}
 	};
 	
